@@ -1,0 +1,302 @@
+@import 'tailwindcss';
+
+/* ─────────────────────────────────────────────────────────────
+   DESIGN SYSTEM — Anshul Sharma
+   Ink & ember. One accent, used like punctuation.
+   ───────────────────────────────────────────────────────────── */
+
+@theme {
+  /* Surface */
+  --color-ink: #0a0a0b;
+  --color-ink-2: #101013;
+  --color-ink-3: #17171b;
+  --color-paper: #ede9e3;
+  --color-paper-dim: #8e8b86; /* 5.83:1 on ink */
+  --color-paper-faint: #7c7973; /* 4.56:1 — was #55534f at 2.58:1, an AA failure */
+  --color-ember: #ff4a1c;
+  --color-line: #23232a;
+
+  /* Print — the one chapter on paper (About). Ember darkens to hold AA on
+     paper (4.6:1); ink-soft is the dim body tone there (7.1:1). */
+  --color-ink-soft: #4f4c47;
+  --color-ember-deep: #c2330e;
+  --color-line-paper: #d3cdc4;
+
+  /* Type — Archivo carries display and body via its width axis, so the
+     identity comes from one family rather than a fashionable pairing */
+  --font-sans: 'Archivo', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'Bodoni Moda', ui-serif, Didot, Georgia, serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  /* Fluid scale */
+  --text-mega: clamp(3rem, 11vw, 12rem);
+  --text-huge: clamp(2.5rem, 7.5vw, 7rem);
+  --text-big: clamp(1.9rem, 4.2vw, 3.6rem);
+  --text-lede: clamp(1.05rem, 1.5vw, 1.5rem);
+  --text-micro: 0.6875rem;
+
+  /* Weight extremes — the hierarchy is carried by weight, not just size.
+     Body sits at 420, not the 340 it started on: sub-400 text on a
+     near-black ground reads thin and blooms at small sizes. */
+  --weight-body: 420;
+  --weight-heading: 600;
+  --weight-display: 800;
+
+  /* Motion tokens — mirrored in src/lib/motion.js for JS */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+  --dur-micro: 220ms;
+  --dur-ui: 450ms;
+  --dur-section: 900ms;
+  --dur-cinematic: 1500ms;
+}
+
+@layer base {
+  * {
+    min-width: 0;
+  }
+
+  html {
+    background: var(--color-ink);
+    color: var(--color-paper);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    /* Lenis drives scroll; keep native as the fallback */
+    scroll-behavior: smooth;
+  }
+
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    font-weight: var(--weight-body);
+    overflow-x: clip;
+    letter-spacing: -0.011em;
+  }
+
+  ::selection {
+    background: var(--color-ember);
+    color: var(--color-ink);
+  }
+
+  /* No radius of its own: the outline follows each element's real shape,
+     so pills get pill rings. A 2px radius here broke the No Middle Radius
+     Rule on the element peers inspect hardest. */
+  :focus-visible {
+    outline: 2px solid var(--color-ember);
+    outline-offset: 3px;
+  }
+
+  /* no single-word last lines in running copy */
+  p {
+    text-wrap: pretty;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-weight: var(--weight-heading);
+    letter-spacing: -0.04em;
+    line-height: 0.92;
+    text-wrap: balance;
+  }
+
+  ::-webkit-scrollbar {
+    width: 9px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-ink);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-line);
+    border-radius: 9999px; /* rounded.full — 99px rendered the same but read as an undocumented step */
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-paper-faint);
+  }
+}
+
+/* ── Layout primitives ─────────────────────────────────────── */
+
+@utility shell {
+  width: 100%;
+  max-width: 1680px;
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 4.5vw, 5.5rem);
+}
+
+@utility eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-paper-dim);
+}
+
+/* ── Small-text roles ───────────────────────────────────────
+   Three sizes (11 / 12 / 14px) carry every label, control and
+   metadata job on the site. Tracking varies by purpose; size
+   does not. These replaced seven ad-hoc values in a 6px range. */
+
+/* Numbers, years, handles — anything enumerated or measured. */
+@utility index {
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Interactive labels: nav links and buttons. One weight step up from
+   body — small uppercase text needs it on a near-black ground. */
+@utility control {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* The name, wherever it appears. One role, one size, two places. */
+@utility wordmark {
+  font-size: 0.875rem;
+  font-weight: var(--weight-heading);
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+/* Small prose and metadata. Slight positive tracking and extra
+   leading compensate for light text on a near-black ground. */
+@utility meta {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  letter-spacing: 0.005em;
+}
+
+@utility display {
+  font-weight: var(--weight-display);
+  font-stretch: 112%;
+  letter-spacing: -0.04em;
+  line-height: 0.88;
+}
+
+/* Didone italic for emotive words — the counterweight to the grotesque */
+@utility accent-serif {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+  font-stretch: normal;
+  letter-spacing: -0.015em;
+}
+
+@utility hairline {
+  border-color: var(--color-line);
+}
+
+/* Fills the parent, used for section-scoped ambient layers */
+@utility layer-fill {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* ── Atmosphere: grain + vignette (CSS only, no JS cost) ───── */
+
+.grain::after {
+  content: '';
+  position: fixed;
+  inset: -150%;
+  z-index: 90;
+  pointer-events: none;
+  opacity: 0.048;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: grain-drift 6s steps(6) infinite;
+  will-change: transform;
+}
+
+.grain::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 89;
+  pointer-events: none;
+  background: radial-gradient(ellipse 120% 85% at 50% 45%, transparent 45%, rgb(0 0 0 / 0.55) 100%);
+}
+
+@keyframes grain-drift {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  16% {
+    transform: translate3d(-3%, 2%, 0);
+  }
+  33% {
+    transform: translate3d(2%, -3%, 0);
+  }
+  50% {
+    transform: translate3d(-2%, -2%, 0);
+  }
+  66% {
+    transform: translate3d(3%, 1%, 0);
+  }
+  83% {
+    transform: translate3d(-1%, 3%, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Film perforations along a reel's gate. Square-ish holes on a black
+   base; the background position is scrubbed so the stock visibly runs. */
+.perfs {
+  background-color: #060607;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0 8px,
+    rgb(237 233 227 / 0.14) 8px 18px,
+    transparent 18px 24px
+  );
+  background-size: 9px 24px;
+  background-repeat: repeat-y;
+  background-position-x: center;
+}
+
+/* A dotted leader, as in film credits: role .......... name */
+.leader {
+  height: 2px;
+  background-image: radial-gradient(circle, currentColor 0.8px, transparent 1.15px);
+  background-size: 7px 2px;
+  background-repeat: repeat-x;
+  background-position: 0 center;
+}
+
+/* The native pointer is kept everywhere, except over a reel's screen,
+   where the "Open" disc stands in for it. */
+
+/* ── Reduced motion: the site stays whole, the theatre stops ── */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+  .grain::after {
+    animation: none;
+  }
+}

@@ -1,0 +1,469 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-23T10:17:10Z",
+  "title": "Design System: Aṃśu",
+  "extensions": {
+    "colorMeta": {
+      "flare": {
+        "role": "primary",
+        "displayName": "Flare",
+        "canonical": "oklch(68.2% 0.211 37.7)",
+        "tonalRamp": [
+          "#220000",
+          "#470e00",
+          "#752000",
+          "#a6370e",
+          "#db4b16",
+          "#fc7850",
+          "#feb59f",
+          "#ffe9e2"
+        ]
+      },
+      "void": {
+        "role": "neutral",
+        "displayName": "Void",
+        "canonical": "oklch(14.1% 0.004 285.8)",
+        "tonalRamp": [
+          "#0b0b0d",
+          "#252527",
+          "#424244",
+          "#616164",
+          "#828285",
+          "#a5a5a8",
+          "#c9c9cc",
+          "#eeeef1"
+        ]
+      },
+      "void-2": {
+        "role": "neutral",
+        "displayName": "Void Raised",
+        "canonical": "oklch(17.9% 0.006 285.8)",
+        "tonalRamp": [
+          "#0b0b0e",
+          "#252528",
+          "#414245",
+          "#616165",
+          "#828286",
+          "#a4a4a9",
+          "#c8c9cd",
+          "#eeeef2"
+        ]
+      },
+      "light": {
+        "role": "neutral",
+        "displayName": "Warm Light",
+        "canonical": "oklch(95.5% 0.007 88.6)",
+        "tonalRamp": [
+          "#0c0b08",
+          "#262521",
+          "#43423e",
+          "#63615d",
+          "#84827e",
+          "#a7a5a0",
+          "#cbc9c4",
+          "#f0eee9"
+        ]
+      },
+      "light-dim": {
+        "role": "neutral",
+        "displayName": "Light Dim",
+        "canonical": "oklch(64.3% 0.009 91.5)",
+        "tonalRamp": [
+          "#0d0b07",
+          "#272520",
+          "#44423d",
+          "#63615b",
+          "#84827c",
+          "#a7a59f",
+          "#cbc9c3",
+          "#f1eee8"
+        ]
+      },
+      "bone": {
+        "role": "neutral",
+        "displayName": "Bone",
+        "canonical": "oklch(92.5% 0.008 91.5)",
+        "tonalRamp": [
+          "#0c0b07",
+          "#262521",
+          "#43423d",
+          "#63615c",
+          "#84827d",
+          "#a7a59f",
+          "#cbc9c3",
+          "#f0eee8"
+        ]
+      },
+      "bone-2": {
+        "role": "neutral",
+        "displayName": "Bone Shadow",
+        "canonical": "oklch(88.5% 0.011 89.7)",
+        "tonalRamp": [
+          "#0d0b06",
+          "#27251f",
+          "#44423b",
+          "#64615a",
+          "#85827b",
+          "#a8a59d",
+          "#ccc9c1",
+          "#f1eee6"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "oklch(17.9% 0.004 286.0)",
+        "tonalRamp": [
+          "#0b0b0d",
+          "#252527",
+          "#424244",
+          "#616163",
+          "#828285",
+          "#a5a5a7",
+          "#c9c9cc",
+          "#eeeef1"
+        ]
+      },
+      "ink-dim": {
+        "role": "neutral",
+        "displayName": "Ink Dim",
+        "canonical": "oklch(47.9% 0.008 88.7)",
+        "tonalRamp": [
+          "#0d0b07",
+          "#272521",
+          "#44423d",
+          "#63615c",
+          "#84827d",
+          "#a7a59f",
+          "#cbc9c3",
+          "#f1eee8"
+        ]
+      },
+      "line-d": {
+        "role": "neutral",
+        "displayName": "Hairline on Void",
+        "canonical": "rgb(242 240 235 / 0.13)"
+      },
+      "line-d-strong": {
+        "role": "neutral",
+        "displayName": "Strong Hairline on Void",
+        "canonical": "rgb(242 240 235 / 0.26)"
+      },
+      "line-l": {
+        "role": "neutral",
+        "displayName": "Hairline on Bone",
+        "canonical": "rgb(17 17 19 / 0.16)"
+      },
+      "glass": {
+        "role": "neutral",
+        "displayName": "Glass",
+        "canonical": "rgb(28 28 30 / 0.55)"
+      },
+      "glass-hover": {
+        "role": "neutral",
+        "displayName": "Glass, Hovered",
+        "canonical": "rgb(48 48 50 / 0.6)"
+      },
+      "highlight": {
+        "role": "neutral",
+        "displayName": "Inner Highlight",
+        "canonical": "rgb(255 255 255 / 0.09)"
+      },
+      "glow": {
+        "role": "atmosphere",
+        "displayName": "Ray Glow",
+        "canonical": "rgb(255 214 170 / 0.14)"
+      },
+      "glow-flare": {
+        "role": "atmosphere",
+        "displayName": "Flare Glow",
+        "canonical": "rgb(255 110 50 / 0.07)"
+      },
+      "shade": {
+        "role": "atmosphere",
+        "displayName": "Warm Shade",
+        "canonical": "rgb(34 26 18 / 0.32)"
+      },
+      "press": {
+        "role": "atmosphere",
+        "displayName": "Letterpress",
+        "canonical": "rgb(255 255 255 / 0.55)"
+      },
+      "grade-warm": {
+        "role": "atmosphere",
+        "displayName": "Grade, Warm Centre",
+        "canonical": "rgb(255 168 110 / 0.065)"
+      },
+      "grade-cool": {
+        "role": "atmosphere",
+        "displayName": "Grade, Cool Edge",
+        "canonical": "rgb(36 62 84 / 0.26)"
+      },
+      "vignette": {
+        "role": "atmosphere",
+        "displayName": "Vignette",
+        "canonical": "rgb(4 5 8 / 0.42)"
+      }
+    },
+    "typographyMeta": {
+      "giant": {
+        "displayName": "Giant",
+        "purpose": "The footer wordmark, fitted to the exact width of the page."
+      },
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero, chapter titles, Method words, name tiles. Uppercase."
+      },
+      "h2": {
+        "displayName": "Section heading",
+        "purpose": "Upright first line, italic second line."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Project titles, capability names, menu entries."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "The Intro sentence, brought into focus by the scroll."
+      },
+      "mega": {
+        "displayName": "Mega",
+        "purpose": "The contact address; thickens near the cursor on the variable weight axis."
+      },
+      "numeral": {
+        "displayName": "Numeral",
+        "purpose": "The gate counter; tabular figures."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running text, 44–58ch."
+      },
+      "annotation": {
+        "displayName": "Annotation",
+        "purpose": "Italic callouts on leader lines; capability proofs."
+      },
+      "meta": {
+        "displayName": "Meta",
+        "purpose": "Small prose and metadata."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Every caption, index and measured readout. Mono, uppercase."
+      }
+    },
+    "shadows": [
+      {
+        "name": "glass-pill",
+        "value": "inset 0 1px 0 rgb(255 255 255 / 0.09), 0 12px 30px -14px rgb(4 5 8 / 0.42)",
+        "purpose": "Inner top highlight and a soft low drop under every glass control."
+      },
+      {
+        "name": "tile-depth",
+        "value": "0 1px 0 rgb(255 255 255 / 0.09) inset, 0 44px 80px -46px rgb(34 26 18 / 0.32)",
+        "purpose": "About and Lab tiles lifting off bone, with a warm shade."
+      },
+      {
+        "name": "lit-type",
+        "value": "text-shadow: 0 0 0.55em rgb(255 214 170 / 0.14), 0 0 1.6em rgb(255 110 50 / 0.07)",
+        "purpose": "Display type on void, lit by the ray."
+      },
+      {
+        "name": "press",
+        "value": "text-shadow: 0 1px 0 rgb(255 255 255 / 0.55)",
+        "purpose": "Headings on bone, pressed into the paper."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out-expo",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Entrances (GSAP expo.out), 1.1–1.6s."
+      },
+      {
+        "name": "ease-in-out-quart",
+        "value": "cubic-bezier(0.76, 0, 0.24, 1)",
+        "purpose": "State to state (GSAP power4.inOut)."
+      },
+      {
+        "name": "ease-out-soft",
+        "value": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "Hovers and colour, 0.45s."
+      },
+      {
+        "name": "spring-soft",
+        "value": "anime.js spring({ bounce: 0.18, duration: 700 })",
+        "purpose": "Menu icon, equalizer settle."
+      },
+      {
+        "name": "spring-pop",
+        "value": "anime.js spring({ bounce: 0.45, duration: 650 })",
+        "purpose": "Brand-mark core, arrows springing in."
+      },
+      {
+        "name": "roll-stagger",
+        "value": "14ms per letter, 0.65s expo-out",
+        "purpose": "Roll hover on every link and control."
+      },
+      {
+        "name": "velocity-skew",
+        "value": "skewY up to 2.6deg from Lenis velocity",
+        "purpose": "Display headings lean with scroll speed."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      },
+      {
+        "name": "xl",
+        "value": "1280px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Glass Pill",
+      "kind": "button",
+      "refersTo": "button-glass",
+      "description": "The default control on void: View case, Copy address, Menu.",
+      "html": "<button class=\"ds-pill-glass\">View case <svg viewBox=\"0 0 16 16\" width=\"11\" height=\"11\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><line x1=\"2\" y1=\"8\" x2=\"13.2\" y2=\"8\"/><polyline points=\"8.6,3.4 13.4,8 8.6,12.6\"/></svg></button>",
+      "css": ".ds-pill-glass{display:inline-flex;align-items:center;gap:.6em;height:2.5rem;padding:0 1.1rem;border-radius:9999px;font-family:var(--font-mono);font-size:.6875rem;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;cursor:pointer;transition:background-color .45s cubic-bezier(.22,1,.36,1),color .45s cubic-bezier(.22,1,.36,1),border-color .45s cubic-bezier(.22,1,.36,1);background:linear-gradient(180deg,var(--color-glass-hover),var(--color-glass));color:var(--color-light);border:1px solid var(--color-line-d);box-shadow:inset 0 1px 0 var(--color-highlight),0 12px 30px -14px var(--color-vignette)}.ds-pill-glass:hover{background:var(--color-glass-hover);border-color:var(--color-line-d-strong)}.ds-pill-glass:focus-visible{outline:2px solid var(--color-flare);outline-offset:3px}.ds-pill-glass:active{transform:translateY(1px) scale(.985)}"
+    },
+    {
+      "name": "Light Pill",
+      "kind": "button",
+      "refersTo": "button-light",
+      "description": "The open Menu control; the brightest object in the chrome.",
+      "html": "<button class=\"ds-pill-light\">Close</button>",
+      "css": ".ds-pill-light{display:inline-flex;align-items:center;gap:.6em;height:2.5rem;padding:0 1.1rem;border-radius:9999px;font-family:var(--font-mono);font-size:.6875rem;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;cursor:pointer;transition:background-color .45s cubic-bezier(.22,1,.36,1),color .45s cubic-bezier(.22,1,.36,1),border-color .45s cubic-bezier(.22,1,.36,1);background:var(--color-light);color:var(--color-void);border:0}.ds-pill-light:hover{background:var(--color-flare)}.ds-pill-light:focus-visible{outline:2px solid var(--color-flare);outline-offset:3px}"
+    },
+    {
+      "name": "Ink Pill",
+      "kind": "button",
+      "refersTo": "button-ink",
+      "description": "A control on the bone chapter.",
+      "html": "<button class=\"ds-pill-ink\">Résumé</button>",
+      "css": ".ds-pill-ink{display:inline-flex;align-items:center;gap:.6em;height:2.5rem;padding:0 1.1rem;border-radius:9999px;font-family:var(--font-mono);font-size:.6875rem;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;cursor:pointer;transition:background-color .45s cubic-bezier(.22,1,.36,1),color .45s cubic-bezier(.22,1,.36,1),border-color .45s cubic-bezier(.22,1,.36,1);background:var(--color-ink);color:var(--color-bone);border:0}.ds-pill-ink:hover{background:var(--color-flare);color:var(--color-ink)}.ds-pill-ink:focus-visible{outline:2px solid var(--color-ink);outline-offset:3px}"
+    },
+    {
+      "name": "Link with Drawn Arrow",
+      "kind": "custom",
+      "refersTo": "link-arrow",
+      "description": "Every outbound link: a 1px underline draws in, the arrow is authored SVG.",
+      "html": "<a class=\"ds-link\" href=\"#\">Live site <span class=\"ds-link-arrow\"><svg viewBox=\"0 0 16 16\" width=\"11\" height=\"11\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><line x1=\"2\" y1=\"8\" x2=\"13.2\" y2=\"8\"/><polyline points=\"8.6,3.4 13.4,8 8.6,12.6\"/></svg></span></a>",
+      "css": ".ds-link{display:inline-flex;align-items:center;gap:.4em;color:var(--color-light);font-family:var(--font-mono);font-size:.6875rem;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;background-image:linear-gradient(currentColor,currentColor);background-size:0% 1px;background-position:0 100%;background-repeat:no-repeat;transition:background-size .6s cubic-bezier(.16,1,.3,1)}.ds-link:hover,.ds-link:focus-visible{background-size:100% 1px}.ds-link-arrow{display:inline-flex;transform:rotate(-45deg);transition:transform .5s cubic-bezier(.16,1,.3,1)}.ds-link:hover .ds-link-arrow{transform:rotate(-45deg) translateX(2px)}.ds-link:focus-visible{outline:2px solid var(--color-flare);outline-offset:3px}"
+    },
+    {
+      "name": "Section Head",
+      "kind": "custom",
+      "refersTo": "section-head",
+      "description": "Every chapter opens with its number and name over a hairline that fades out.",
+      "html": "<div class=\"ds-head\"><span>(04) — Capabilities</span><span>Six instruments</span></div>",
+      "css": ".ds-head{display:flex;justify-content:space-between;align-items:baseline;padding-bottom:.75rem;font-family:var(--font-mono);font-size:.6875rem;letter-spacing:.06em;text-transform:uppercase;color:var(--color-ink-dim);background:linear-gradient(90deg,var(--color-line-l),var(--color-line-l) 65%,transparent) bottom/100% 1px no-repeat}"
+    },
+    {
+      "name": "Ray Mark",
+      "kind": "custom",
+      "refersTo": "brand-mark",
+      "description": "The brand mark: a point of light, eight rays, a ring. Turns slowly; rays reach out on hover.",
+      "html": "<span class=\"ds-mark\"><svg viewBox=\"0 0 32 32\" width=\"40\" height=\"40\"><g class=\"ds-mark-rays\" stroke=\"var(--color-flare)\" stroke-width=\"1.6\" stroke-linecap=\"round\"><line x1=\"16\" y1=\"9.8\" x2=\"16\" y2=\"3.4\"/><line x1=\"20.4\" y1=\"11.6\" x2=\"23.4\" y2=\"8.6\"/><line x1=\"22.2\" y1=\"16\" x2=\"28.6\" y2=\"16\"/><line x1=\"20.4\" y1=\"20.4\" x2=\"23.4\" y2=\"23.4\"/><line x1=\"16\" y1=\"22.2\" x2=\"16\" y2=\"28.6\"/><line x1=\"11.6\" y1=\"20.4\" x2=\"8.6\" y2=\"23.4\"/><line x1=\"9.8\" y1=\"16\" x2=\"3.4\" y2=\"16\"/><line x1=\"11.6\" y1=\"11.6\" x2=\"8.6\" y2=\"8.6\"/></g><circle cx=\"16\" cy=\"16\" r=\"15\" fill=\"none\" stroke=\"currentColor\" stroke-opacity=\".35\"/><circle cx=\"16\" cy=\"16\" r=\"3.1\" fill=\"currentColor\"/></svg></span>",
+      "css": ".ds-mark{display:inline-flex;color:var(--color-light);padding:12px;background:var(--color-void)}.ds-mark-rays{transform-origin:16px 16px;animation:ds-turn 28s linear infinite}.ds-mark:hover .ds-mark-rays{animation-duration:4s}@keyframes ds-turn{to{transform:rotate(360deg)}}"
+    },
+    {
+      "name": "Navigation Bar",
+      "kind": "nav",
+      "refersTo": "nav",
+      "description": "Wordmark with progress hairline, chapter readout, availability and Menu pills. Text blends by difference over any ground.",
+      "html": "<nav class=\"ds-nav\"><span class=\"ds-nav-word\">Anshul Sharma<i></i></span><span class=\"ds-nav-chapter\">02 — Work</span><span class=\"ds-nav-pill\"><b></b>Available for work</span></nav>",
+      "css": ".ds-nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:4.25rem;padding:0 1.5rem;background:var(--color-void);color:var(--color-light)}.ds-nav-word{display:flex;flex-direction:column;gap:6px;font-size:.875rem;font-weight:500;letter-spacing:-.01em}.ds-nav-word i{display:block;width:7rem;height:1px;background:linear-gradient(90deg,currentColor 38%,rgb(242 240 235 / .25) 38%)}.ds-nav-chapter{font-family:var(--font-mono);font-size:.6875rem;letter-spacing:.06em;text-transform:uppercase}.ds-nav-pill{display:inline-flex;align-items:center;gap:.6em;height:2.5rem;padding:0 1.1rem;border-radius:9999px;font-family:var(--font-mono);font-size:.6875rem;letter-spacing:.06em;text-transform:uppercase;background:var(--color-glass);border:1px solid var(--color-line-d)}.ds-nav-pill b{width:7px;height:7px;border-radius:50%;background:var(--color-flare)}"
+    },
+    {
+      "name": "Tile",
+      "kind": "card",
+      "refersTo": "tile-void",
+      "description": "A square void tile on bone with a warm shade; arrives through a grid of clearing cells.",
+      "html": "<div class=\"ds-tile\"><span class=\"ds-tile-label\">AS—E001 · Canvas 2D</span><span class=\"ds-tile-title\">Orbit Field</span></div>",
+      "css": ".ds-tile{display:flex;flex-direction:column;justify-content:space-between;width:280px;height:200px;padding:1.5rem;background:var(--color-void);color:var(--color-light);border-radius:0;box-shadow:0 1px 0 var(--color-highlight) inset,0 44px 80px -46px var(--color-shade)}.ds-tile-label{font-family:var(--font-mono);font-size:.6875rem;letter-spacing:.06em;text-transform:uppercase;color:var(--color-light-dim)}.ds-tile-title{font-family:var(--font-serif);font-size:2rem;line-height:.95;text-shadow:0 0 .55em var(--color-glow),0 0 1.6em var(--color-glow-flare);transition:transform .7s cubic-bezier(.16,1,.3,1)}.ds-tile:hover .ds-tile-title{transform:translateX(8px)}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Ray",
+    "overview": "Aṃśu (अंशु) is Sanskrit for a ray of light, and the root of the name Anshul. The whole site follows one ray from its first frame to its last, and every surface is a state of that light: gathered at the gate, ignited in the hero, brought into focus, projected onto the work, refracted into four disciplines, flooded into one lit chapter, condensed back to a point, and returned at Contact. The system's job is to stay out of the light's way.\n\nThe mood is luminous, exact, quiet. Luminous because light is the only thing allowed to be loud: a WebGL core, dust graded warm-to-steel by depth, type that glows faintly where the ray touches it. Exact because every number on the page is measured in the visitor's browser, every hairline is one pixel, and every motion has one easing family. Quiet because the interface itself is small, mono-captioned and translucent, and recedes the moment the work or the light is on screen.",
+    "keyCharacteristics": [
+      "One light source, on raw WebGL2, behind every chapter; everything else is quiet chrome",
+      "Two grounds only: void for the dark chapters, bone for the single lit one",
+      "One flare accent, used for the light and for state, never for body text on bone",
+      "Instrument Serif display against light-weight Geist, captioned in 11px Geist Mono",
+      "Two motion engines with one boundary: GSAP for scroll and type, anime.js for the mark, icons and control responses",
+      "Every on-page number is measured; nothing is claimed that does not exist"
+    ],
+    "rules": [
+      {
+        "name": "The Two Grounds Rule",
+        "body": "The page has exactly two grounds. Bone appears once, as a whole chapter entered and left through the light — never as an odd section in the dark.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Light Rule",
+        "body": "Flare is the only chroma. A second accent, or flare on running text on bone, breaks the world.",
+        "section": "colors"
+      },
+      {
+        "name": "The Serif Speaks, The Mono Captions Rule",
+        "body": "Statements are serif; anything enumerated, measured or labelled is mono. Body copy is never mono.",
+        "section": "typography"
+      },
+      {
+        "name": "The Lit Type Rule",
+        "body": "Display type on void carries a faint warm glow because the ray touches it; on bone, headings are letterpressed with press instead. Never both.",
+        "section": "typography"
+      },
+      {
+        "name": "The Stacking Contract",
+        "body": "The WebGL stage is a fixed canvas at z-index 1. Section backgrounds paint below it; every section's content sits in .layer (z-index 2) above it. A section element never takes a transform, opacity or filter. Animate inside .layer.",
+        "section": "layout"
+      },
+      {
+        "name": "The Blended Chrome Rule",
+        "body": "The chrome's words sit on layers blended by difference, so they read on void, bone, the flood and the dark tiles without knowing what is beneath them. Only the pills keep their own glass.",
+        "section": "layout"
+      },
+      {
+        "name": "The Tinted Shadow Rule",
+        "body": "A shadow carries the hue of the world it falls in — warm shade on bone, vignette black under glass. A neutral grey shadow is a defect.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Engine Boundary Rule",
+        "body": "GSAP owns everything driven by scroll and every piece of type; anime.js owns only the brand mark, the drawn icons and the physical responses of controls. A new effect goes to the engine whose side of the line it is on.",
+        "section": "components"
+      }
+    ],
+    "dos": [
+      "Do let the light lead: when the work or the WebGL stage is on screen, the chrome stays small and translucent.",
+      "Do keep every on-page number measured in the browser (bytes received, point count, the colophon).",
+      "Do keep reduced motion a designed path: no gate, the still light, Method as a list, every scene in its final state.",
+      "Do blend chrome text by difference so it reads on any ground.",
+      "Do use the ink focus ring on bone and the flare ring on void.",
+      "Do draw icons as SVG in one stroke weight; never use a text glyph as an icon."
+    ],
+    "donts": [
+      "Don't add a second accent colour or a third ground.",
+      "Don't put flare on body text on bone.",
+      "Don't animate a section element (see the Stacking Contract).",
+      "Don't invent clients, awards, numbers or testimonials.",
+      "Don't use an intermediate corner radius; it is 0 or a full pill.",
+      "Don't cast a grey shadow; tint it to the world it falls in.",
+      "Don't give one effect two engines; it lives on its side of the Engine Boundary."
+    ]
+  }
+}

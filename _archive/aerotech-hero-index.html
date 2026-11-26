@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Anshuman Aerotech — Built on the ground. Proven in flight.</title>
+<meta name="description" content="Anshuman Aerotech designs, machines and tests flight-critical components and assemblies, built to aerospace tolerances.">
+<meta name="theme-color" content="#030a14">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%23030a14'/%3E%3Cpath d='M12 4l7.5 14L12 14.6 4.5 18z' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500&family=Newsreader:ital,opsz,wght@1,6..72,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+html,body{background:#030a14;color:#fff}
+:root{
+  --bg:#030a14;--accent:#8ff0c0;
+  --ease:cubic-bezier(.16,1,.3,1);
+  --pad:clamp(20px,4.5vw,72px);
+  --sans:'Inter Tight',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --serif:'Newsreader',Georgia,serif;
+  --mono:'JetBrains Mono',ui-monospace,Consolas,monospace;
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{font-family:var(--sans);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:clip}
+::selection{background:rgb(143 240 192/.3)}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid #fff;outline-offset:3px;border-radius:999px}
+
+/* ---------- material: liquid glass (subtle tier) ---------- */
+.liquid-glass{position:relative;overflow:hidden;border:none;
+  background:rgba(255,255,255,.01);background-blend-mode:luminosity;
+  -webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);
+  box-shadow:inset 0 1px 1px rgba(255,255,255,.1)}
+.liquid-glass::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1.4px;pointer-events:none;
+  background:linear-gradient(180deg,rgba(255,255,255,.45) 0%,rgba(255,255,255,.15) 20%,rgba(255,255,255,0) 40%,
+    rgba(255,255,255,0) 60%,rgba(255,255,255,.15) 80%,rgba(255,255,255,.45) 100%);
+  -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor;
+          mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+          mask-composite:exclude}
+
+/* ---------- hero + media plate ---------- */
+.hero{position:relative;height:100vh;height:100dvh;min-height:560px;overflow:clip;isolation:isolate;
+  display:flex;flex-direction:column;justify-content:flex-end}
+.plate{position:absolute;inset:0;z-index:0;overflow:hidden;background:var(--bg)}
+.plate video{position:absolute;top:0;right:-4%;width:116%;height:100%;object-fit:cover;object-position:50% 32%;pointer-events:none}
+.js .plate video{opacity:0;transform:scale(1.06);transition:opacity 1.8s var(--ease),transform 1.8s var(--ease)}
+.js .plate video.is-ready{opacity:1;transform:none}
+.plate::after{content:"";position:absolute;inset:0;pointer-events:none;background:
+  linear-gradient(to bottom,rgb(3 10 20/.55),rgb(3 10 20/0) 140px),
+  linear-gradient(to top,var(--bg),rgb(3 10 20/.55) 16%,rgb(3 10 20/0) 40%),
+  linear-gradient(to right,rgb(3 10 20/.82),rgb(3 10 20/.6) 30%,rgb(3 10 20/0) 62%)}
+
+/* ---------- nav ---------- */
+.nav{position:fixed;top:20px;left:0;right:0;z-index:20;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 var(--pad)}
+.brand{justify-self:start;display:flex;align-items:center;gap:10px}
+.brand svg{width:22px;height:22px}
+.brand b{font-weight:500;font-size:17px;letter-spacing:-.02em}
+.brand small{font:400 10px/1 var(--mono);letter-spacing:.24em;color:rgb(255 255 255/.55);margin-left:2px}
+.links{display:flex;gap:2px;padding:6px;border-radius:999px}
+.links a{padding:8px 14px;border-radius:999px;font-size:14px;color:rgb(255 255 255/.85);transition:background-color .25s,color .25s}
+.links a:hover{background:rgb(255 255 255/.08);color:#fff}
+.nav-right{grid-column:3;justify-self:end;display:flex;align-items:center;gap:8px}
+.nav-cta{background:#fff;color:#000;border-radius:999px;padding:10px 18px;font-size:14px;font-weight:500;white-space:nowrap;transition:transform .2s}
+.nav-cta:hover{transform:scale(1.03)}.nav-cta:active{transform:scale(.97)}
+.burger{display:none;width:44px;height:44px;border-radius:999px;place-content:center;gap:5px;cursor:pointer;padding:0}
+.burger span{display:block;width:18px;height:1.5px;border-radius:1px;background:#fff;transition:transform .3s cubic-bezier(.22,1,.36,1),opacity .2s}
+.menu-open .burger span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.menu-open .burger span:nth-child(2){opacity:0}
+.menu-open .burger span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.menu{position:fixed;inset:0;z-index:15;display:flex;flex-direction:column;justify-content:center;
+  padding:max(96px,calc(env(safe-area-inset-top) + 88px)) 24px max(32px,env(safe-area-inset-bottom));
+  background:rgb(3 10 20/.55);-webkit-backdrop-filter:blur(24px);backdrop-filter:blur(24px);
+  opacity:0;visibility:hidden;transition:opacity .28s ease,visibility 0s linear .28s}
+.menu-open .menu{opacity:1;visibility:visible;transition:opacity .28s ease}
+.menu a{display:block;padding:12px 0;font-size:clamp(28px,8vw,36px);font-weight:400;letter-spacing:-.03em;
+  opacity:0;transform:translateY(20px);transition:opacity .5s cubic-bezier(.22,1,.36,1),transform .5s cubic-bezier(.22,1,.36,1)}
+.menu .menu-cta{margin-top:24px;font:500 12px/1 var(--mono);letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
+.menu-open .menu a{opacity:1;transform:none;transition-delay:calc(100ms + var(--i)*80ms)}
+body.menu-open{overflow:hidden}
+
+/* ---------- content ---------- */
+.stage{position:relative;z-index:10;display:grid;grid-template-columns:1fr auto;align-items:end;gap:32px 48px;
+  padding:120px var(--pad) clamp(32px,7vh,72px)}
+.eyebrow{display:flex;align-items:center;gap:14px;margin:0 0 28px;font:500 11.5px/1 var(--mono);letter-spacing:.22em;text-transform:uppercase;color:rgb(255 255 255/.55)}
+.eyebrow::before{content:"";width:32px;height:1px;background:rgb(255 255 255/.3)}
+.h1{margin:0;font-weight:400;font-size:clamp(44px,6.6vw,104px);line-height:.95;letter-spacing:-.045em;text-shadow:0 16px 38px rgba(0,0,0,.32)}
+.h1 .line{display:block;white-space:nowrap}
+.h1 em{font-family:var(--serif);font-style:italic;font-size:1.1em;line-height:.86;letter-spacing:-.01em;color:rgb(255 255 255/.72)}
+.w{display:inline-block}
+.sub{margin:28px 0 0;max-width:30rem;font-weight:300;font-size:17px;line-height:1.55;color:rgb(255 255 255/.7);text-shadow:0 2px 18px rgba(0,0,0,.42)}
+.ctas{display:flex;align-items:center;flex-wrap:wrap;gap:16px 28px;margin-top:36px}
+.btn{display:inline-flex;align-items:center;justify-content:space-between;gap:16px;background:#fff;color:#000;border-radius:999px;
+  padding:8px 8px 8px 24px;font-size:15px;font-weight:500;white-space:nowrap;transition:transform .2s}
+.btn:active{transform:scale(.97)}
+.disc{width:34px;height:34px;border-radius:50%;background:#000;color:#fff;display:grid;place-items:center;transition:transform .35s var(--ease)}
+.btn:hover .disc{transform:rotate(45deg)}
+.ghost{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;font-size:15px;color:rgb(255 255 255/.85);transition:color .2s}
+.ghost span{transition:transform .25s var(--ease)}
+.ghost:hover{color:#fff}.ghost:hover span{transform:translateX(3px)}
+
+/* ---------- telemetry ---------- */
+.tele{font:400 11px/1 var(--mono);letter-spacing:.18em;text-transform:uppercase;color:rgb(255 255 255/.55);min-width:230px}
+.clock{display:flex;align-items:center;gap:10px}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.clock time{color:rgb(255 255 255/.9);font-weight:500;font-variant-numeric:tabular-nums}
+.tele hr{border:0;height:1px;background:rgb(255 255 255/.12);margin:16px 0}
+.tele ol{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.tele ol span{color:rgb(255 255 255/.35);margin-right:10px}
+
+/* ---------- grain ---------- */
+.grain{position:fixed;inset:0;z-index:100;pointer-events:none;opacity:.4;background-size:200px 200px;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E")}
+
+/* ---------- entrance (rest state visible without JS) ---------- */
+.in{animation:blurRise 1s var(--ease) var(--d,0s) both}
+.in-fade{animation-name:fadeRise}
+.in-down{animation:fadeDown .8s var(--ease) both}
+.w{animation:wordIn .7s ease-out both;animation-delay:calc(.3s + var(--i)*80ms)}
+.js .in,.js .in-down,.js .w{animation-play-state:paused}
+.fonts-ready .in,.fonts-ready .in-down,.fonts-ready .w{animation-play-state:running}
+@keyframes blurRise{from{opacity:0;transform:translateY(24px);filter:blur(10px)}}
+@keyframes fadeRise{from{opacity:0;transform:translateY(20px)}}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-16px)}}
+@keyframes wordIn{
+  0%{filter:blur(10px);opacity:0;transform:translateY(50px)}
+  50%{filter:blur(5px);opacity:.5;transform:translateY(-5px)}
+  100%{filter:blur(0);opacity:1;transform:none}}
+
+/* ---------- responsive ---------- */
+@media (max-width:1023px){
+  .stage{grid-template-columns:1fr}
+  .tele{min-width:0}
+  .tele hr,.tele ol{display:none}
+}
+@media (max-width:767px){
+  .links,.nav-cta{display:none}
+  .burger{display:grid}
+  .plate video{right:0;width:100%;object-position:66% 25%}
+  .plate::after{background:
+    linear-gradient(to bottom,rgb(3 10 20/.55),rgb(3 10 20/0) 120px),
+    linear-gradient(to top,var(--bg),rgb(3 10 20/.9) 26%,rgb(3 10 20/.45) 52%,rgb(3 10 20/0) 72%)}
+  .h1{font-size:clamp(40px,11vw,56px)}
+  .h1 .line{white-space:normal}
+  .sub{font-size:16px;margin-top:22px}
+  .eyebrow{margin-bottom:22px;font-size:10.5px;letter-spacing:.16em}
+  .ctas{margin-top:28px}
+  .stage{padding-bottom:max(28px,env(safe-area-inset-bottom))}
+}
+@media (max-width:420px){
+  .ctas{flex-direction:column;align-items:stretch}
+}
+@media (min-width:768px) and (max-height:720px){
+  .h1{font-size:clamp(40px,5.4vw,80px)}
+  .eyebrow{margin-bottom:20px}.sub{margin-top:20px}.ctas{margin-top:26px}
+}
+@media (min-width:768px){.menu{display:none}}
+@media (prefers-reduced-motion:reduce){
+  .in,.in-down,.w{animation:none!important}
+  .js .plate video{opacity:1;transform:none;transition:none}
+  .burger span,.menu,.menu a{transition-duration:.001s!important;transition-delay:0s!important}
+}
+</style>
+</head>
+<body>
+<div class="hero">
+  <div class="plate" aria-hidden="true">
+    <video src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260315_073750_51473149-4350-4920-ae24-c8214286f323.mp4"
+           autoplay muted loop playsinline preload="auto"></video>
+  </div>
+
+  <header class="nav in-down">
+    <a class="brand" href="#" aria-label="Anshuman Aerotech home">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5 22.5 21 12 16.2 1.5 21Z" fill="currentColor"/></svg>
+      <b>Anshuman</b><small>AEROTECH</small>
+    </a>
+    <nav class="links liquid-glass" aria-label="Primary">
+      <a href="#capabilities">Capabilities</a><a href="#programs">Programs</a><a href="#quality">Quality</a><a href="#company">Company</a>
+    </nav>
+    <div class="nav-right">
+      <a class="nav-cta" href="#contact">Talk to engineering</a>
+      <button class="burger liquid-glass" aria-controls="menu" aria-expanded="false" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <div class="menu" id="menu">
+    <nav aria-label="Mobile">
+      <a href="#capabilities" style="--i:0">Capabilities</a>
+      <a href="#programs" style="--i:1">Programs</a>
+      <a href="#quality" style="--i:2">Quality</a>
+      <a href="#company" style="--i:3">Company</a>
+      <a href="#contact" class="menu-cta" style="--i:4">Talk to engineering ↗</a>
+    </nav>
+  </div>
+
+  <main class="stage">
+    <div>
+      <p class="eyebrow in" style="--d:.2s">Aerospace engineering &amp; manufacturing</p>
+      <h1 class="h1">
+        <span class="line"><span class="w" style="--i:0">Built</span> <span class="w" style="--i:1">on</span> <span class="w" style="--i:2">the</span> <span class="w" style="--i:3">ground.</span></span>
+        <span class="line"><span class="w" style="--i:4">Proven</span> <em class="w" style="--i:5">in</em> <em class="w" style="--i:6">flight.</em></span>
+      </h1>
+      <p class="sub in in-fade" style="--d:.85s">We design, machine and test flight-critical components and assemblies — built to aerospace tolerances, documented to the last part number.</p>
+      <div class="ctas in in-fade" style="--d:1s">
+        <a class="btn" href="#contact">Talk to engineering
+          <span class="disc" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></span>
+        </a>
+        <a class="ghost" href="#capabilities">Explore capabilities <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+
+    <aside class="tele in in-fade" style="--d:1.15s" aria-label="Capabilities">
+      <div class="clock"><i class="dot" aria-hidden="true"></i>UTC <time data-utc>--:--:--</time></div>
+      <hr>
+      <ol>
+        <li><span>01</span>Design &amp; analysis</li>
+        <li><span>02</span>Precision machining</li>
+        <li><span>03</span>Test &amp; inspection</li>
+        <li><span>04</span>MRO support</li>
+      </ol>
+    </aside>
+  </main>
+</div>
+<div class="grain" aria-hidden="true"></div>
+
+<script>
+(() => {
+  const root = document.documentElement;
+  const go = () => root.classList.add('fonts-ready');
+  (document.fonts ? document.fonts.ready : Promise.resolve()).then(go);
+  setTimeout(go, 1500); // never wait forever
+
+  // Media: fade + settle in once the first frame exists
+  const v = document.querySelector('.plate video');
+  v.muted = true;
+  const ready = () => v.classList.add('is-ready');
+  v.readyState >= 2 ? ready() : v.addEventListener('loadeddata', ready, { once: true });
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) { v.removeAttribute('autoplay'); v.pause(); }
+  else v.play().catch(() => {});
+
+  // Live UTC mission clock
+  const t = document.querySelector('[data-utc]');
+  const tick = () => { const d = new Date(); t.textContent = d.toISOString().slice(11, 19); t.dateTime = d.toISOString(); };
+  tick(); setInterval(tick, 1000);
+
+  // Mobile menu
+  const burger = document.querySelector('.burger'), menu = document.getElementById('menu');
+  const isOpen = () => document.body.classList.contains('menu-open');
+  const set = (open) => {
+    document.body.classList.toggle('menu-open', open);
+    burger.setAttribute('aria-expanded', String(open));
+    burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    menu.inert = !open;
+    if (open) menu.querySelector('a').focus({ preventScroll: true });
+  };
+  menu.inert = true;
+  burger.addEventListener('click', () => set(!isOpen()));
+  menu.addEventListener('click', (e) => { if (e.target.closest('a') || e.target === menu) set(false); });
+  addEventListener('keydown', (e) => { if (e.key === 'Escape' && isOpen()) { set(false); burger.focus(); } });
+  matchMedia('(min-width: 768px)').addEventListener('change', (e) => { if (e.matches) set(false); });
+})();
+</script>
+</body>
+</html>

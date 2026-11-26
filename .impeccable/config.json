@@ -1,0 +1,35 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "design-system-color",
+        "value": "rgb(0 0 0 / 0.55)",
+        "createdAt": "2026-08-15T18:31:41.105Z",
+        "reason": "Claude: vignette scrim, documented in DESIGN.md Elevation & Depth as layer 2 of the depth stack. A darkening overlay over the ink ground, not a palette colour, so the Warm Neutral Rule does not apply to it."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#2a1109",
+        "createdAt": "2026-09-16T14:21:13.308Z",
+        "reason": "agent decision: pre-existing ember-shadow atmosphere tint already used by Hero reduced-motion fallback and the original Experiments field; atmospheric glow, not a UI colour"
+      },
+      {
+        "rule": "codex-grid-background",
+        "value": "*",
+        "files": [
+          "src/index.css"
+        ],
+        "createdAt": "2026-11-22T22:55:58.519Z",
+        "reason": "Claude triage: .perfs is a 22px-wide film-perforation strip on each Work reel's gate (literal film stock, scrubbed with the reel), not a decorative grid background"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "100px",
+        "createdAt": "2026-11-22T23:51:27.875Z",
+        "reason": "Claude triage: Footer useFit sets 100px only as a measurement probe, then immediately replaces it with the computed fit-to-width size; never rendered as a design size"
+      }
+    ]
+  }
+}

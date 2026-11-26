@@ -1,0 +1,1 @@
+The first Amber & Stone entry (dark, Cormorant, no WebGL), archived 2026-11-24 when the Specimen Book rebuild replaced it. content-entry.js is the old object from src/content.js; work/ holds its stills and reel.
